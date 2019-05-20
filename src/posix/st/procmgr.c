@@ -64,7 +64,7 @@ int losiP_initprocmgr (losi_Alloc allocf, void *allocud)
 		/* setup signal action */
 		childact.sa_handler = SIG_DFL;
 		sigemptyset(&childact.sa_mask);
-		childact.sa_flags = 0;
+		childact.sa_flags = SA_RESTART;
 		/* setup signal block mask */
 		sigemptyset(&childmsk);
 		sigaddset(&childmsk, SIGCHLD);
